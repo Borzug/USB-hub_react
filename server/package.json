@@ -1,0 +1,13 @@
+{
+  "name": "cards-server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  }
+}
