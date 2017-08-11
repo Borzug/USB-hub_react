@@ -3,6 +3,7 @@ var http = require('http').Server(app);
 var cards = require('./service/cards');
 var io = require('socket.io')(http);
 var cors = require('cors');
+
 var startActivity = require('./service/fakeActivity');
 
 app.use(cors());
