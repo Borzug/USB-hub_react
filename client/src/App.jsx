@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { object } from 'prop-types';
 
 import * as cardsActions from './actions/cardsActions';
 import Grid from './components/Grid';
 
 class App extends Component {
+  static propTypes = {
+    actions: object.isRequired
+  }
+
   constructor(props) {
     super(props);
     window.socket.on('change', (card) => {

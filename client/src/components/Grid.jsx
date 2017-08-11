@@ -1,8 +1,13 @@
 import React from 'react';
+import { array } from 'prop-types';
 
 import Card from './Card';
 
-const Grid = ({cards}) => {
+Grid.propTypes = {
+  cards: array.isRequired
+}
+
+function Grid ({cards}) {
   return (
     <section className="grid">
       {cards.map((card) =>

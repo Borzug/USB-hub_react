@@ -1,24 +1,28 @@
 import React from 'react';
+import { object } from 'prop-types';
 
 import disconnected from '../assets/disconnected.svg';
 import charging from '../assets/charging.svg';
 import downloading from '../assets/download.svg';
 import classNames from 'classnames';
 
-const Card = ({card}) => {
+Card.propTypes = {
+  card: object.isRequired
+}
+
+function Card({card}) {
 
   let connectionStatus = classNames({'card--not-connected': !card.IsConnected}); 
-  let connect = classNames({'elem--hide': !card.IsConnected});
-  let transferStatus = classNames({'elem--hide': !card.Device.IsCopying || card.Device.CopyingProgress >= 100});
-  let transferred = classNames({'elem--hide': !card.Device.IsCopying || card.Device.CopyingProgress < 100});
+  let connect = classNames({'hidden': !card.IsConnected});
+  let transferStatus = classNames({'hidden': !card.Device.IsCopying || card.Device.CopyingProgress >= 100});
+  let transferred = classNames({'hidden': !card.Device.IsCopying || card.Device.CopyingProgress < 100});
   let chargeStatus = classNames({
     'card--low-charge': card.Device.ChargeProgress < 30,
     'card--charging': card.Device.ChargeProgress < 80,
     'card--charged': card.Device.ChargeProgress >=80
   });
   let disconnect = classNames({
-    'elem--hide': card.IsConnected,
-    'elem--show': !card.IsConnected
+    'hidden': card.IsConnected,
   });
 
   return (
