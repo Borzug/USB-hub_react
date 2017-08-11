@@ -1,4 +1,5 @@
 import React from 'react';
+
 import disconnected from '../assets/disconnected.svg';
 import charging from '../assets/charging.svg';
 import downloading from '../assets/download.svg';
