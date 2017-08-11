@@ -28,13 +28,13 @@ body {
   transition: all 0.5s ease-out;
 }
 
-.card-header {
+.card__header {
   text-align: center;
   font-family: 'PTSansRegular';
   font-size: 20px;
 }
 
-.card-text {
+.card__text {
   text-align: center;
   font-family: 'PTSansRegular';
   font-size: 15px;
@@ -65,29 +65,29 @@ progress[value]::-webkit-progress-value {
   transition: width 0.4s linear;  
 }
 
-.charged {
+.card--charged {
   background-color: lightgreen;
 }
 
-.charging {
+.card--charging {
   background-color: lightyellow;
 }
 
-.low-charge {
+.card--low-charge {
   background-color: lightcoral;
 }
 
-.not-connected {
+.card--not-connected {
   background-color: white;
   border: 1px dashed;
   opacity: 0.3;
   box-shadow: none;  
 }
 
-.hide {
+.elem--hide {
   display: none;
 }
 
-.show {
+.elem--show {
   display: inline-flex;
 }

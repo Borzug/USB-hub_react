@@ -7,18 +7,18 @@ import classNames from 'classnames';
 
 const Card = ({card}) => {
 
-  let connectionStatus = classNames({'not-connected': !card.IsConnected}); 
-  let connect = classNames({'hide': !card.IsConnected});
-  let transferStatus = classNames({'hide': !card.Device.IsCopying || card.Device.CopyingProgress >= 100});
-  let transferred = classNames({'hide': !card.Device.IsCopying || card.Device.CopyingProgress < 100});
+  let connectionStatus = classNames({'card--not-connected': !card.IsConnected}); 
+  let connect = classNames({'elem--hide': !card.IsConnected});
+  let transferStatus = classNames({'elem--hide': !card.Device.IsCopying || card.Device.CopyingProgress >= 100});
+  let transferred = classNames({'elem--hide': !card.Device.IsCopying || card.Device.CopyingProgress < 100});
   let chargeStatus = classNames({
-    'low-charge': card.Device.ChargeProgress < 30,
-    'charging': card.Device.ChargeProgress < 80,
-    'charged': card.Device.ChargeProgress >=80
+    'card--low-charge': card.Device.ChargeProgress < 30,
+    'card--charging': card.Device.ChargeProgress < 80,
+    'card--charged': card.Device.ChargeProgress >=80
   });
   let disconnect = classNames({
-    'hide': card.IsConnected,
-    'show': !card.IsConnected
+    'elem--hide': card.IsConnected,
+    'elem--show': !card.IsConnected
   });
 
   return (
@@ -31,7 +31,7 @@ const Card = ({card}) => {
           <img src={charging} alt="charging"></img>&nbsp;{card.Device.ChargeProgress}%
         </div>
       
-        <div className="card-header">
+        <div className="card__header">
           Порт:&nbsp;{card.PortId}
           <p className={transferStatus}>
             <img src={downloading} alt="Transferring"></img>
@@ -39,10 +39,10 @@ const Card = ({card}) => {
           </p>
         </div>
 
-        <div className="card-header">
+        <div className="card__header">
           <p className={transferred}>
             <img src={downloading} alt="Transferring"></img>
-            <span className="card-text">&nbsp;Скопировано</span>
+            <span className="card__text">&nbsp;Скопировано</span>
           </p>
         </div>          
       </div>
