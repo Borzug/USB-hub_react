@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { object } from 'prop-types';
+import { object, array } from 'prop-types';
 
 import * as cardsActions from './actions/cardsActions';
 import Grid from './components/Grid';
 
 class App extends Component {
   static propTypes = {
-    actions: object.isRequired
+    cards: array,
+    actions: object.isRequired,
   }
 
   constructor(props) {
