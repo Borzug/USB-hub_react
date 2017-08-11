@@ -15,9 +15,7 @@ class App extends Component {
 
   render() {
     return (      
-      <div className="app">
         <Grid cards={this.props.cards} />
-      </div>
     );
   }
 }
