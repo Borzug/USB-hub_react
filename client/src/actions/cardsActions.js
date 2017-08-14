@@ -5,12 +5,12 @@ export function update(card) {
 }
 
 export function getCards() {
-  return function(dispatch) {        
+  return function(dispatch) {    
     return api.getCards().then(cards => {
       dispatch(getCardsSuccess(cards));
     }).catch(error => {
       throw(error);
-    })
+    });
   }
 }
 
