@@ -1,4 +1,4 @@
-export default function cardReducer(state, action) {
+export default function cardReducer(state, action) {  
   switch(action.type) {
     case 'CARD_UPDATED':
       var cards = state.cards.map((card) => {
