@@ -9,6 +9,11 @@ var { getCardsDelay } = require('./service/delay');
 
 app.use(cors());
 
+// Change public to build in production. Cors importing only needed in development.
+app.get('/', function(req, res) {
+  res.sendFile(path.join( __dirname, '../client/public/index.html'));
+});
+
 app.get('/cards', function(req, res){
   setTimeout(function() {
     res.setHeader('Content-Type', 'application/json');
