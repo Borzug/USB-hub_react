@@ -5,12 +5,15 @@ var io = require('socket.io')(http);
 var cors = require('cors');
 
 var startActivity = require('./service/fakeActivity');
+var { getCardsDelay } = require('./service/delay');
 
 app.use(cors());
 
-app.get('/', function(req, res){
-  res.setHeader('Content-Type', 'application/json');
-  res.send(cards);
+app.get('/cards', function(req, res){
+  setTimeout(function() {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(cards);
+  }, getCardsDelay);
 });
 
 http.listen(8080, function(){
