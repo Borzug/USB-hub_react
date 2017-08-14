@@ -16,12 +16,12 @@ class App extends Component {
     super(props);
     window.socket.on('change', (card) => {
       this.props.actions.update(card);
-    });
+    });    
   }
 
   render() {
-    return (      
-        <Grid cards={this.props.cards} />
+    return (
+      <Grid cards={this.props.cards} />
     );
   }
 }
