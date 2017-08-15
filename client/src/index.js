@@ -5,12 +5,11 @@ import { getCards } from './actions/cardsActions';
 
 import App from './App';
 import configureStore from './store/configureStore';
-import initialState from './store/initialState';
 import registerServiceWorker from './registerServiceWorker';
 import './assets/fonts/PTS55F_stylesheet.css';
 import './index.css';
 
-const store = configureStore(initialState);
+const store = configureStore();
 store.dispatch(getCards());
 
 ReactDOM.render(

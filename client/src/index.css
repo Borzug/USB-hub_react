@@ -14,6 +14,13 @@ body {
 	background: url(assets/loader.gif) center no-repeat #fff;
 }
 
+.error {
+  margin: 80px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;  
+}
+
 .grid {
   margin: 80px;  
   display: flex;

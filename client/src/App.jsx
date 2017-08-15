@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { object, array } from 'prop-types';
+import { object, array, string } from 'prop-types';
 
 import * as cardsActions from './actions/cardsActions';
 import Grid from './components/Grid';
 
 class App extends Component {
   static propTypes = {
-    cards: array,
-    actions: object.isRequired,
+    cards: array.isRequired,
+    error: string.isRequired,
+    actions: object.isRequired
   }
 
   constructor(props) {
@@ -21,14 +22,18 @@ class App extends Component {
 
   render() {
     return (
-      <Grid cards={this.props.cards} />
+      <Grid 
+        cards={this.props.cards}
+        error={this.props.error}
+       />
     );
   }
 }
 
 function mapStateToProps(state, ownProps) {
   return { 
-    cards: state.cards
+    cards: state.cards,
+    error: state.error
   };
 }
 

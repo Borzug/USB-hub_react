@@ -9,9 +9,13 @@ export function getCards() {
     return api.getCards().then(cards => {
       dispatch(getCardsSuccess(cards));
     }).catch(error => {
-      throw(error);
+      dispatch(getCardsFailed(error));
     });
   }
+}
+
+export function getCardsFailed(error) {
+  return {type: "GET_CARDS_ERROR", error}
 }
 
 export function getCardsSuccess(cards) {
