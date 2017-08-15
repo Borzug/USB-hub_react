@@ -8,9 +8,9 @@ ErrorPage.propTypes = {
 function ErrorPage ({error}) {  
   return (
     <section className="error">
-      <div>
-        <h1>Что-то пошло не так:</h1>
-        <p className="card__header">{error.status}&nbsp;{error.statusText}</p>
+      <div className="card card--low-charge">
+        <p>Что-то пошло не так:</p>
+        <p className="card__header">{error.status}:&nbsp;{error.statusText}</p>
       </div>
     </section>
   );
