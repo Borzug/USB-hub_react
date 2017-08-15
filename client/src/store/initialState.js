@@ -1,4 +1,4 @@
 export default {
   cards: [],
-  error: ''
+  error: {}
 };

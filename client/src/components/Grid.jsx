@@ -1,5 +1,5 @@
 import React from 'react';
-import { array, string } from 'prop-types';
+import { array, object } from 'prop-types';
 
 import Card from './Card';
 import Loading from './Loading';
@@ -7,14 +7,14 @@ import ErrorPage from './ErrorPage';
 
 Grid.propTypes = {
   cards: array.isRequired,
-  error: string.isRequired
+  error: object.isRequired
 }
 
 function Grid ({cards, error}) {
-  if (!cards.length && !error) {
+  if (!cards.length && !error.status) {
     return <Loading />
   }
-  if (error) {
+  if (error.status) {
     return <ErrorPage error={error} />
   }
   return (

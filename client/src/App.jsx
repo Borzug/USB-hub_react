@@ -9,7 +9,7 @@ import Grid from './components/Grid';
 class App extends Component {
   static propTypes = {
     cards: array.isRequired,
-    error: string.isRequired,
+    error: object.isRequired,
     actions: object.isRequired
   }
 
