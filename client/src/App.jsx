@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { object, array, string } from 'prop-types';
+import { object, array } from 'prop-types';
 
 import * as cardsActions from './actions/cardsActions';
 import Grid from './components/Grid';
